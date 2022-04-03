@@ -1,0 +1,71 @@
+package com.mile1.service;
+
+import com.mile1.beam.Student;
+import com.mile1.exception.*;
+//import com.mile1.exception.NullStudentObjectException;
+
+public class StudentReport 
+{
+	public String findGrades(Student s)
+	{
+		for(int i:s.getMarks())
+		{
+			if(i<35)
+			{
+				return "grade is \"F\"";
+			}
+		}
+		int sum=0;
+		for(int i:s.getMarks())
+		{
+			sum+=i;
+		}
+		if (sum<150)
+		{
+			return "grade is \"C\"";
+		}
+		else if(sum<200)
+		{
+			return "grade is \"B\"";
+		}
+		else if(sum<250)
+		{
+			return "grade is \"A\"";
+		}
+		else
+		{
+			return "grade is \"A+\"";
+		}
+	}
+	public String validate(Student s)
+	{
+		try
+		{
+			//throw new NullNameException();
+			if(s==null)
+			{
+				throw new NullStudentObjectException();
+			}
+			else if (s.getName() == null)
+			{
+				throw new NullNameException();
+			}
+			else if(s.getMarks()==null)
+			{
+				throw new NullMarksArrayException();
+			}
+			else
+			{
+				return "VALID";
+			}
+			//return "VALID";
+		}
+		catch(Exception e)
+		{
+			//String s1=e;
+			System.out.println(e);
+		}
+		return "";
+		
+	}
+}

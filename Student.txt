@@ -1,0 +1,47 @@
+package com.mile1.beam;
+
+public class Student 
+{
+	String name;
+	int marks[];
+	String grade;
+	public Student()
+	{
+		
+	}
+	public Student(String name, int[] marks)
+	{
+		this.marks=marks;
+		this.name=name;
+	}
+	public Student(String grade, int[] marks, String name)
+	{
+		this.grade=grade;
+		this.marks=marks;
+		this.name=name;
+	}
+	public void setName(String name)
+	{
+		this.name=name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public void setMarks(int[] marks)
+	{
+		this.marks=marks;
+	}
+	public int[] getMarks()
+	{
+		return this.marks;
+	}
+	public void setGrade(String grade)
+	{
+		this.grade=grade;
+	}
+	public String getGrade()
+	{
+		return this.grade;
+	}
+}

@@ -1,0 +1,58 @@
+package com.mile1.service;
+
+import com.mile1.beam.Student;
+
+public class StudentService 
+{
+	public int findNumberOfNullMarksArray(Student s[])
+	{
+		int c=0;
+		if(s!=null)
+		{
+			for(Student i:s)
+			{
+				if(i!=null)
+				{
+					if(i.getMarks()==null)
+					{
+						c=c+1;
+					}
+				}
+			}
+		}
+		return c;
+	}
+	public int findNumberOfNullName(Student s[])
+	{
+		int c=0;
+		if(s!=null)
+		{
+			for(Student i:s)
+			{
+				if(i!=null)
+				{
+					if(i.getName()==null)
+					{
+						c=c+1;
+					}
+				}
+			}
+		}
+		return c;
+	}
+	public int findNumberOfNullObjects(Student s[])
+	{
+		int c=0;
+		if(s!=null)
+		{
+			for(Student i:s)
+			{
+				if(i==null)
+				{
+					c=c+1;
+				}
+			}
+		}
+		return c;
+	}
+}
